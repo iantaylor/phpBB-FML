@@ -1,0 +1,60 @@
+<!-- INCLUDE overall_header.html -->
+<h1>phpbb-FML</h1>
+<form method="post" action="{U_ACTION}">
+
+<fieldset>
+<legend>{L_SETTINGS}</legend>
+<dl>
+	<dt><label for="enable_fml">{L_ENABLE_FML}</label></dt>
+			
+		<dd><input type="radio" class="radio" name="enable_fml" id="enable_fml" value="1" <!-- IF ENABLE_FML -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+		<input type="radio" class="radio" name="enable_fml" value="0" <!-- IF not ENABLE_FML -->checked="checked"<!-- ENDIF --> /> {L_NO}
+	</dd>			
+</dl>
+<dl>
+	<dt><label for="enable_fml">{L_ALLOW_ANON}</label></dt>
+			
+		<dd><input type="radio" class="radio" name="allow_anon" id="allow_anon" value="1" <!-- IF ALLOW_ANON -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+		<input type="radio" class="radio" name="allow_anon" value="0" <!-- IF not ALLOW_ANON -->checked="checked"<!-- ENDIF --> /> {L_NO}
+	</dd>			
+</dl>
+<dl>
+	<dt><label for="enable_fml">{L_ALLOW_COMMENTS}</label></dt>
+			
+		<dd><input type="radio" class="radio" name="allow_comments" id="allow_comments" value="1" <!-- IF ALLOW_COMMENTS -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+		<input type="radio" class="radio" name="allow_comments" value="0" <!-- IF not ALLOW_COMMENTS -->checked="checked"<!-- ENDIF --> /> {L_NO}
+	</dd>			
+</dl>
+<dl>
+	<dt><label for="categorie">{L_FML_AV_SIZE}</label></dt>
+		<dd>
+			<input type="text" size="3" id="fml_av_size" name="fml_av_size" value="{FML_AV_SIZE}"> px
+		</dd>
+</dl>
+<dl>
+	<dt><label for="categorie">{L_MIN_THRESH}</label><br />
+	{L_MIN_THRESH_EXPLAIN}</dt>
+		<dd>
+			<input type="text" size="3" id="min_thresh" name="min_thresh" value="{MIN_THRESH}">
+		</dd>
+</dl>
+<dl>
+	<dt><label for="categorie">{L_MAX_THRESH}</label><br />
+	{L_MAX_THRESH_EXPLAIN}</dt>
+		<dd>
+			<input type="text" size="3" id="max_thresh" name="max_thresh" value="{MAX_THRESH}"> 
+		</dd>
+</dl>
+<dl>
+	<dt><label for="categorie">{L_GOOD_COLOUR}</label></dt>
+		<dd>
+			<input type="text" size="3" id="good_colour" name="good_colour" value="{GOOD_COLOUR}"> 
+		</dd>
+</dl>
+
+<input type="submit" value="{L_SUBMIT}" name="submit" id="submit" />
+</fieldset>
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->

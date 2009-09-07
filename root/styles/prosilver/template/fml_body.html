@@ -1,0 +1,261 @@
+<!-- INCLUDE overall_header.html -->
+<script type="text/javascript">
+
+function display(action, id)
+{
+if (action == 'show')
+{
+document.getElementById("explanation"+id).style.display = "block";
+document.getElementById("link"+id).href= "javascript:display('hide', "+id+")";
+ document.getElementById("link"+id).innerHTML = "{L_CLICK_CLOSE}";
+}
+
+if (action == 'hide')
+{
+document.getElementById("explanation"+id).style.display = "none";
+document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
+ document.getElementById("link"+id).innerHTML = "{L_CLICK_VIEW}";
+}
+}
+
+</script>
+<!-- IF MODE == 'fmylife' -->
+	<div style="text-align:center" class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+			<font size="2">{L_OPTION} <a href="{U_MAIN}">{SITENAME}</a> {L_OR} <strong><a href="{U_FML_ORIG}">fmylife</a></strong></font>
+	 	<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+
+<!-- BEGIN fml -->
+
+	<br />
+	 <!-- IF fml.S_FIRST_ROW -->
+	 <div style="width:20%; float:right" class="navbar">
+		<div class="inner">
+		<span class="corners-top"><span></span></span>
+		<h3>{L_CATS}</h3>
+		<a href="{U_TOP_FML}" class="top2">{L_TOP_FML}</a>
+		<hr />
+		<a href="{U_TOP_DAY}" class="top2">{L_TOP_DAY}</a>
+		<hr />
+		<a href="{U_TOP_WEEK}" class="top2">{L_TOP_WEEK}</a>
+		<hr />
+		<a href="{U_TOP_MONTH}" class="top2">{L_TOP_MONTH}</a>
+		<hr />
+		<a href="{U_FML_RANDOM}" class="top2">{L_RANDOM}</a>
+		<hr />
+		
+	 	<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	 <!-- ENDIF -->
+	<div  <!-- IF fml.S_FIRST_ROW --> style="width:74%; float:left" <!-- ENDIF --> class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+	  		<p style="font-size:14px">{fml.FML_TEXT}</p>
+{L_DESERVE}({fml.TOTAL_DESERVE}) |  {L_AGREE} ({fml.TOTAL_AGREE})	
+<br /> 
+ {L_ON} {fml.FML_DATE} {L_BY} {fml.FML_POSTER} 
+  	
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+		<div style="clear:both"></div>
+
+	<!-- END fml -->
+<!-- ENDIF -->
+
+
+<!-- IF MODE != 'post' and MODE != 'comment' && MODE != 'fmylife'-->
+	<br />
+	<!-- IF S_USER_LOGGED_IN --><p align="center"><a href="{U_POST_MODE}" style="font-size:24px;">{L_POST_FML}</a></p><!-- ENDIF -->
+	
+	<div style="text-align:center" class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+	<font size="2">{L_OPTION} <strong><a href="{U_MAIN}">{SITENAME}</a></strong> {L_OR} <a href="{U_FML_ORIG}">fmylife</a></font>
+	 	<span class="corners-bottom"><span></span></span></div>
+	</div>
+	<!-- BEGIN fml -->
+	<br />
+	 <!-- IF fml.S_FIRST_ROW -->
+	 <div style="width:20%; float:right" class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<h3>{L_CATS}</h3>
+		<a href="{U_CAT}{L_LOVE}" class="top2">{L_LOVE}</a>
+		<hr />
+		<a href="{U_CAT}{L_MONEY}" class="top2">{L_MONEY}</a>
+		<hr />
+		<a href="{U_CAT}{L_KIDS}" class="top2">{L_KIDS}</a>
+		<hr />
+		<a href="{U_CAT}{L_WORK}" class="top2">{L_WORK}</a>
+		<hr />
+		<a href="{U_CAT}{L_HEALTH}" class="top2">{L_HEALTH}</a>
+		<hr />
+		<a href="{U_CAT}{L_INTAMICY}" class="top2">{L_INTAMICY}</a>
+		<hr />
+		<a href="{U_CAT}{L_MISC}" class="top2">{L_MISC}</a>
+		<hr />
+		<a href="{U_RANDOM}" class="top2">{L_RANDOM}</a>
+
+		
+	 	<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	 <!-- ENDIF -->
+	<div  <!-- IF fml.S_FIRST_ROW --> style="width:74%; float:left" <!-- ENDIF --> class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+	  		<p style="font-size:14px">{L_TODAY}, {fml.FML_TEXT} {L_FML}</p>
+	  		<!-- IF ENABLE_COMMENT --><a href="{fml.U_COMMENT_PAGE}">{L_COMMENTS}</a> ({fml.TOTAL_COMMENTS}) <!-- ENDIF -->
+<!-- IF not fml.HAS_RATED  --><img src="./images/thumb-down.png" alt="disagree"  /> <a href="{fml.U_FML_DESERVE}">{L_DESERVE}</a><!-- ELSE --><img src="./images/thumb-down.png" alt="disagree"  /> {L_DESERVE}<!-- ENDIF --> ({fml.TOTAL_DESERVE}) | <!-- IF not fml.HAS_RATED  --><img src="./images/thumb-up.png" alt="disagree"  /> <a href="{fml.U_FML_AGREE}">{L_AGREE}</a><!-- ELSE --><img src="./images/thumb-up.png" alt="disagree"  /> {L_AGREE}<!-- ENDIF --> ({fml.TOTAL_AGREE})	
+<br /> 
+<br />
+{L_BY} {fml.AVATAR_THUMB} {fml.FML_POSTER}  {L_ON} {fml.FML_DATE} 
+<!-- IF U_ACP --> 
+		<ul class="profile-icons">
+	  		<li class="delete-icon"><a href="{fml.U_FML_DELETE}"><span>{DELETE_IMG}</span></a></li>
+	  	</ul> 
+<!-- ENDIF -->	  	
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+				<!-- IF MODE == 'random' -->
+					<div style="text-align:center;"><h2><a href="{U_RANDOM}">{L_REFRESH}</a></h2></div>
+				<!-- ENDIF -->
+
+		<div style="clear:both"></div>
+
+	<!-- END fml -->
+	<!-- IF MODE != 'random'-->
+	<ul class="linklist">
+    <li class="rightside pagination"><!-- IF PAGINATION  --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE -->{PAGE_NUMBER}<!-- ENDIF --></li>
+</ul>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF MODE == 'post' -->
+<form method="post" action="{U_POST_MODE}" id="postform">
+<fieldset>
+{L_FML_TEXT} :<br />
+<!-- INCLUDE posting_buttons.html -->
+
+<textarea id="message" name="fml_text"></textarea><br />
+<br />
+<!-- IF ALLOW_ANON -->
+{L_ANON} :
+{L_YES} <input type="radio" id="fml_anon" name="fml_anon" value="1" />
+{L_NO} <input type="radio" id="fml_anon" name="fml_anon" value="0" /><br />
+<!-- ENDIF -->
+{L_CATS} : 
+<select id="cat" name="cat">
+<option name="{L_LOVE}">{L_LOVE}</option>
+<option name="{L_MONEY}">{L_MONEY}</option>
+<option name="{L_KIDS}">{L_KIDS}</option>
+<option name="{L_WORK}">{L_WORK}</option>
+<option name="{L_HEALTH}">{L_HEALTH}</option>
+<option name="{L_INTAMICY}">{L_INTAMICY}</option>
+<option name="{L_MISC}">{L_MISC}</option>
+</select>
+<br />
+		<input type="submit" value="{L_SUBMIT}" />
+</fieldset>
+
+</form>
+<!-- ENDIF -->
+<!-- IF MODE == 'comment' && ENABLE_COMMENT -->
+	<br />
+<!-- IF S_USER_LOGGED_IN --><p align="center"><a href="{U_POST_MODE}" style="font-size:24px;">{L_POST_FML}</a></p><!-- ENDIF -->
+	<br />
+	<div class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+	  		<p style="font-size:14px">{L_TODAY}, {FML_TEXT} {L_FML}</p>
+	  		{L_COMMENTS} ({TOTAL_COMMENTS})
+<!-- IF not HAS_RATED  --><a href="{U_FML_DESERVE}">{L_DESERVE}</a><!-- ELSE -->{L_DESERVE}<!-- ENDIF --> ({TOTAL_DESERVE}) | <!-- IF not HAS_RATED  --><a href="{U_FML_AGREE}">{L_AGREE}</a><!-- ELSE --> {L_AGREE}<!-- ENDIF --> ({TOTAL_AGREE})	
+<br /> 
+<br />
+{L_BY} {AVATAR_THUMB} {FML_POSTER}  {L_ON} {FML_DATE} 
+<!-- IF U_ACP --> 
+		<ul class="profile-icons">
+	  		<li class="delete-icon"><a href="{U_FML_DELETE}"><span>{DELETE_IMG}</span></a></li>
+	  	</ul> 
+<!-- ENDIF -->	  	
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+	<br />
+<div class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<h3>{L_COMMENTS}</h3>
+		<br />
+		<form action="{U_POST_COMMENT}" method="post">
+			<fieldset>
+				<textarea id="fml_comment_text" name="fml_comment_text"></textarea>
+				<input type="hidden" id="comment_to_id" name="comment_to_id" value="{FML_ID}" /><br />
+				<input type="submit" id="submit" value="{L_SUBMIT_COMMENT}" class="button1" />
+			</fieldset>
+		</form>
+		<br />
+		
+
+		
+
+		<span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- IF U_ACP --> {L_ADMIN_TOOLS} <a href="{U_DELETE_RATES}"> {L_DELETE_RATES}</a> | <a href="{U_DELETE_COMMENTS}"> {L_DELETE_COMMENTS}</a><!-- ENDIF -->
+<br />
+
+<!-- BEGIN comment -->
+<!-- IF comment.BELOW_MAX -->
+<div class="navbar">
+		<div  class="inner"><span class="corners-top"><span></span></span>
+		{L_BELOW_THRESH}, <a id="link{comment.COMMENT_ID}" href="javascript:display('show', {comment.COMMENT_ID})">{L_CLICK_VIEW}</a>
+		<div id="explanation{comment.COMMENT_ID}" style="display:none">
+		<div class="postbody">
+			<div class="content">
+		{comment.FML_COMMENT_TEXT}
+			</div>
+		</div>
+				<dl class="postprofile" style="min-height: 50px">
+			<dt class="author"> {comment.FML_COMMENT_POSTER}</dt>
+				<dd>{comment.FML_AVATAR}</dd>
+				<dd>{comment.FML_COMMENT_DATE}</dd>
+				<dd><!-- IF not comment.HAS_RATED_COMMENT --><a id="{comment.COMMENT_ID}" href="{comment.U_RATE_COMMENT_POS}"><img src="./images/thumb-up.png" alt="agree" /></a><!-- ELSE --><img src="./images/thumb-up.png" alt="agree" /><!-- ENDIF --><!-- IF not comment.HAS_RATED_COMMENT --><a id="{comment.COMMENT_ID}" href="{comment.U_RATE_COMMENT_NEG}" ><img src="./images/thumb-down.png" alt="disagree"  /></a><!-- ELSE --><img src="./images/thumb-down.png" alt="disagree"  /><!-- ENDIF --></dd>
+				<dd>{L_PEOPLE_AGREE} : {comment.AGREES}</dd>
+				<dd>
+					<ul class="profile-icons">
+					<!-- IF comment.CAN_DELETE or (U_MCP or U_ACP) -->
+						<li class="delete-icon"><a href="{comment.U_COMMENT_DELETE}"><span>{DELETE_IMG}</span></a></li>
+					<!-- ENDIF -->
+					</ul>
+				</dd>
+		</dl>		
+</div>
+		<span class="corners-bottom"><span></span></span></div>
+</div>
+<br />
+<!-- ELSE -->
+<div class="navbar" <!-- IF comment.GOOD_COMMENT --> style="background-color:{GOOD_COLOUR}" <!-- ENDIF -->>
+		<div class="inner"><span class="corners-top"><span></span></span>
+				<div class="postbody">
+			<div class="content">
+		{comment.FML_COMMENT_TEXT}
+			</div>
+		</div>
+				<dl class="postprofile" style="min-height: 50px">
+			<dt class="author"> {comment.FML_COMMENT_POSTER}</dt>
+				<dd>{comment.FML_AVATAR}</dd>
+				<dd>{comment.FML_COMMENT_DATE}</dd>
+				<dd><!-- IF not comment.HAS_RATED_COMMENT --><a id="{comment.COMMENT_ID}" href="{comment.U_RATE_COMMENT_POS}"><img src="./images/thumb-up.png" alt="agree" /></a><!-- ELSE --><img src="./images/thumb-up.png" alt="agree" /><!-- ENDIF --><!-- IF not comment.HAS_RATED_COMMENT --><a id="{comment.COMMENT_ID}" href="{comment.U_RATE_COMMENT_NEG}" ><img src="./images/thumb-down.png" alt="disagree"  /></a><!-- ELSE --><img src="./images/thumb-down.png" alt="disagree"  /><!-- ENDIF --></dd>
+				<dd>{L_PEOPLE_AGREE} : {comment.AGREES}</dd>
+				<dd>
+					<ul class="profile-icons">
+					<!-- IF comment.CAN_DELETE or (U_MCP or U_ACP) -->
+						<li class="delete-icon"><a href="{comment.U_COMMENT_DELETE}"><span>{DELETE_IMG}</span></a></li>
+					<!-- ENDIF -->
+					</ul>
+				</dd>
+		</dl>		
+		<span class="corners-bottom"><span></span></span></div>
+</div>
+
+<br />
+<!-- ENDIF -->
+<!-- END comment -->
+
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->
