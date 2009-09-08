@@ -18,6 +18,8 @@ document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
 }
 }
 
+
+
 </script>
 <!-- IF MODE == 'fmylife' -->
 	<div style="text-align:center" class="navbar">
@@ -103,12 +105,21 @@ document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
 	 <!-- ENDIF -->
 	<div  <!-- IF fml.S_FIRST_ROW --> style="width:74%; float:left" <!-- ENDIF --> class="navbar">
 		<div class="inner"><span class="corners-top"><span></span></span>
-	  		<p style="font-size:14px">{L_TODAY}, {fml.FML_TEXT} {L_FML}</p>
-	  		<!-- IF ENABLE_COMMENT --><a href="{fml.U_COMMENT_PAGE}">{L_COMMENTS}</a> ({fml.TOTAL_COMMENTS}) <!-- ENDIF -->
-<!-- IF not fml.HAS_RATED  --><img src="./images/thumb-down.png" alt="disagree"  /> <a href="{fml.U_FML_DESERVE}">{L_DESERVE}</a><!-- ELSE --><img src="./images/thumb-down.png" alt="disagree"  /> {L_DESERVE}<!-- ENDIF --> ({fml.TOTAL_DESERVE}) | <!-- IF not fml.HAS_RATED  --><img src="./images/thumb-up.png" alt="disagree"  /> <a href="{fml.U_FML_AGREE}">{L_AGREE}</a><!-- ELSE --><img src="./images/thumb-up.png" alt="disagree"  /> {L_AGREE}<!-- ENDIF --> ({fml.TOTAL_AGREE})	
-<br /> 
-<br />
-{L_BY} {fml.AVATAR_THUMB} {fml.FML_POSTER}  {L_ON} {fml.FML_DATE} 
+	  		 <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                <tr>
+                   <td width="170" style="text-align:center">
+                      	{fml.AVATAR_THUMB}<br />
+                      	{fml.FML_POSTER}<br />
+                   		{fml.FML_DATE}
+                   	</td>
+                   <td>
+                      <p style="font-size:14px">{L_TODAY}, {fml.FML_TEXT}{L_FML}</p>
+                      <!-- IF ENABLE_COMMENT --><a href="{fml.U_COMMENT_PAGE}">{L_COMMENTS}</a> ({fml.TOTAL_COMMENTS}) <!-- ENDIF -->
+                      <!-- IF not fml.HAS_RATED  --><img src="./images/thumb-down.png" alt="disagree"  /> <a href="{fml.U_FML_DESERVE}">{L_DESERVE}</a><!-- ELSE --><img src="./images/thumb-down.png" alt="disagree"  /> {L_DESERVE}<!-- ENDIF --> ({fml.TOTAL_DESERVE}) | <!-- IF not fml.HAS_RATED  --><img src="./images/thumb-up.png" alt="disagree"  /> <a href="{fml.U_FML_AGREE}">{L_AGREE}</a><!-- ELSE --><img src="./images/thumb-up.png" alt="disagree"  /> {L_AGREE}<!-- ENDIF --> ({fml.TOTAL_AGREE})
+                   </td>
+                </tr>
+             </table>
+
 <!-- IF U_ACP --> 
 		<ul class="profile-icons">
 	  		<li class="delete-icon"><a href="{fml.U_FML_DELETE}"><span>{DELETE_IMG}</span></a></li>
@@ -164,12 +175,19 @@ document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
 	<br />
 	<div class="navbar">
 		<div class="inner"><span class="corners-top"><span></span></span>
-	  		<p style="font-size:14px">{L_TODAY}, {FML_TEXT} {L_FML}</p>
-	  		{L_COMMENTS} ({TOTAL_COMMENTS})
-<!-- IF not HAS_RATED  --><a href="{U_FML_DESERVE}">{L_DESERVE}</a><!-- ELSE -->{L_DESERVE}<!-- ENDIF --> ({TOTAL_DESERVE}) | <!-- IF not HAS_RATED  --><a href="{U_FML_AGREE}">{L_AGREE}</a><!-- ELSE --> {L_AGREE}<!-- ENDIF --> ({TOTAL_AGREE})	
-<br /> 
-<br />
-{L_BY} {AVATAR_THUMB} {FML_POSTER}  {L_ON} {FML_DATE} 
+	  		  <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                <tr>
+                   <td width="170" style="text-align:center">
+                      {AVATAR_THUMB}<br />
+                      {FML_POSTER}<br />
+                   	{FML_DATE}</td>
+                   <td>
+                      <p style="font-size:14px">{L_TODAY}, {FML_TEXT}{L_FML}</p>
+                      <!-- IF ENABLE_COMMENT --><a href="{U_COMMENT_PAGE}">{L_COMMENTS}</a> ({TOTAL_COMMENTS}) <!-- ENDIF -->
+                      <!-- IF not HAS_RATED  --><img src="./images/thumb-down.png" alt="disagree"  /> <a href="{U_FML_DESERVE}">{L_DESERVE}</a><!-- ELSE --><img src="./images/thumb-down.png" alt="disagree"  /> {L_DESERVE}<!-- ENDIF --> ({TOTAL_DESERVE}) | <!-- IF not HAS_RATED  --><img src="./images/thumb-up.png" alt="disagree"  /> <a href="{U_FML_AGREE}">{L_AGREE}</a><!-- ELSE --><img src="./images/thumb-up.png" alt="disagree"  /> {L_AGREE}<!-- ENDIF --> ({TOTAL_AGREE})
+                   </td>
+                </tr>
+             </table>
 <!-- IF U_ACP --> 
 		<ul class="profile-icons">
 	  		<li class="delete-icon"><a href="{U_FML_DELETE}"><span>{DELETE_IMG}</span></a></li>
