@@ -3,19 +3,19 @@
 
 function display(action, id)
 {
-if (action == 'show')
-{
-document.getElementById("explanation"+id).style.display = "block";
-document.getElementById("link"+id).href= "javascript:display('hide', "+id+")";
- document.getElementById("link"+id).innerHTML = "{L_CLICK_CLOSE}";
-}
+	if (action == 'show')
+	{
+		document.getElementById("explanation"+id).style.display = "block";
+		document.getElementById("link"+id).href= "javascript:display('hide', "+id+")";
+	 	document.getElementById("link"+id).innerHTML = "{L_CLICK_CLOSE}";
+	}
 
-if (action == 'hide')
-{
-document.getElementById("explanation"+id).style.display = "none";
-document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
- document.getElementById("link"+id).innerHTML = "{L_CLICK_VIEW}";
-}
+	if (action == 'hide')
+	{
+		document.getElementById("explanation"+id).style.display = "none";
+		document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
+	 	document.getElementById("link"+id).innerHTML = "{L_CLICK_VIEW}";
+	}
 }
 
 
